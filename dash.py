@@ -207,8 +207,8 @@ else:
     future_preds = []
 
     for step in range(4):
-        current_input = current_input 
         current_input = np.array(input_seq[-SEQ_LENGTH:]).reshape(1, SEQ_LENGTH, 1)
+        current_input = current_input 
         pred_scaled = model.predict(current_input)
         pred_value = scaler.inverse_transform(pred_scaled)[0][0]
         future_preds.append(pred_value)
